@@ -1,0 +1,45 @@
+<ion-view view-title="Services">
+	<ion-content>
+		<div class="list" style="background-color:#ffffff;">
+			
+
+			<div class="item" style="background-color:#eeeeee">
+				<h2>Additional Services</h2>
+				<p>Home / Services</p>
+
+				<img style="position: absolute; top:15px; right:15px; width:60px;height: 50px;" src="img/avatar.jpg">
+			</div>
+
+			<!--div class="item" style="background-color:#ffffff;top:2px; bottom:2px;
+                             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);" >
+          <a class="item item-thumbnail-left-app"
+         ng-repeat="s in services track by s.id" href="#main/services/{{s.id}}"
+						 style="height: 57px;">
+        <span style="position: absolute; left:60px; top: 1px;bottom: 1px;">
+                <h6>{{s.serviceName}}</h6>
+                <h6>{{s.requestor}}</h6>
+                <h6>Status: {{s.status}} </h6>
+          
+              
+        </span>
+						
+      </a>
+        
+      </div-->
+				<ul class="list">
+					<li style="box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);"
+							class="item item-toggle" ng-repeat="s in services track by s.id" href="#main/services/{{s.id}}">
+
+						<i class="icon {{s.icon}}"></i> {{s.serviceName}} - {{(s.status === 0)? 'Pending': 'Done'}}
+						<label class="toggle toggle-positive">
+							<input ng-model="s.status" type="checkbox" value="s.status">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+				</ul>
+			
+		</div>
+	</ion-content>
+</ion-view>

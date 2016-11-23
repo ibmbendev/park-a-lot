@@ -1,0 +1,43 @@
+<ion-view view-title="Parkings">
+  <ion-content>
+    <div class="list" style="background-color:#eeeeee;">
+       <div class="item item-image" ng-if="isNetConnected">
+				 	<ng-map zoom="14" center="[{{parkings[0].lat}},{{parkings[0].long}}]">
+						<custom-marker ng-repeat="p in parkings" position="[{{p.lat}}, {{p.long}}]" />
+						<div class="list">
+							<h6>{{p.name}}</h6>
+						</div>
+						</custom-marker>
+					</ng-map>
+      	</div>
+				<div class="item item-image" ng-if="!isNetConnected">
+					<img src="img/mapsmakk.png" />
+				</div>
+     
+    
+  
+    <div class="item" style="background-color:#eeeeee;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);">
+        <h2>Parkings Results</h2>
+      <p>Home / Search / Parks</p>
+			<p>Found {{parkings.length}} parking </p>
+    </div>
+  
+    <div class="item" style="background-color:#ffffff;top:2px; bottom:2px;
+                             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);" >
+          <a class="item item-thumbnail-left-app"
+         ng-repeat="park in parkings track by park.id" href="#main/parks/{{park.id}}"  style="height: 57px;">
+        <img src="{{park.logo}}" style="width: 47px; height: 50px; position: absolute; left:0px;top: 0px;bottom: 1px;">
+        <span style="position: absolute; left:60px; top: 1px;bottom: 1px;">
+                <h6>{{park.name}}</h6>
+                <h6>{{park.location}}</h6>
+                <h6>Available slots: {{park.slots.length}} </h6>
+                <h6>({{park.lat}},{{park.long}})</h6>
+              
+        </span>
+      </a>
+        
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>

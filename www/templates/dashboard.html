@@ -1,0 +1,51 @@
+<ion-view view-title="">
+  <ion-content>
+    <div class="list" style="background-color:#ffffff;">
+   
+      
+      <div class="item" style="background-color:#eeeeee;">
+        <h2>Dashboard</h2>
+        <p>Home / Dashboard </p>
+        
+      </div>
+			<!--
+			 <div class="card" >
+        <div class="item widget">
+          <div class="widget-icon yellow pull-left "><i class="fa fa-tasks"></i></div>
+          <h2>Up and Running</h2>
+          <p>Server Status</p>
+        </div>
+      </div>-->
+      <div class="card" >
+        <div class="item widget">
+          <div class="widget-icon orange pull-left "><i class="fa fa-tasks"></i></div>
+          <h2>{{bookingConfirmedCnt || 0 }}</h2>
+          <p> Confirmed Booking</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="item widget">
+          <div class="widget-icon green pull-left "><i class="fa fa-support"></i></div>
+          <h2>{{bookingPendingCnt|| 0}}</h2>
+          <p> Pending Booking</p>
+        </div>
+      </div>
+			<div class="card" >
+        <div class="item widget">
+          <div class="widget-icon red pull-left "><i class="fa fa-tasks"></i></div>
+          <h2>{{bookingCancelledCnt || 0 }}</h2>
+          <p> Cancelled Booking</p>
+        </div>
+      </div>
+     
+      <div class="card" >
+        <div class="item widget">
+          <div class="widget-icon yellow pull-left "><i class="fa fa-tasks"></i></div>
+					<h2>{{servicesCount}}</h2>
+          <p>Additional Services</p>
+        </div>
+      </div>
+      </div>
+  </ion-content>
+</ion-view>
+  

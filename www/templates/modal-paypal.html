@@ -1,0 +1,32 @@
+<ion-modal-view class="modal slide-in-up ng-enter active ng-enter-active" style="left: 10px; right: 10px; top: 50px ; width:358px;300px;">
+		<div  data-tap-disabled="true" >
+  <ion-header-bar class="bar-assertive-900">
+    <h1 class="title">Payment Method - Paypal</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="HidePaypalModal()">x</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+   <div class="list">
+		 	<div ng-controller="PaymentCtrl">
+ <form name="ppForm" ng-submit="LoginToPaypal(paypal) && ppForm.$valid ">
+          <md-input-container flex>
+            <input ng-model="paypal.username" placeholder="Email Address"   type="text" required 
+                          ng-value="paypal.username" >
+          </md-input-container>
+          <md-input-container flex>
+            <input ng-model="paypal.password"  placeholder="Password"   type="password" required 
+                          ng-value="paypal.password" >
+          </md-input-container>
+          <label>
+           <button class="button button-small  button-positive" type="submit">
+             Login to Paypal
+            </button>
+          </label>
+	 		<div class="error" ng-if="errorMessage" ng-bind="errorMessage"></div>
+				 </form>
+		 </div>
+      </div>
+		</div>
+  </ion-content>
+</ion-modal-view>

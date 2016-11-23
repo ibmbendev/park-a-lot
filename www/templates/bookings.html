@@ -1,0 +1,57 @@
+<ion-view>
+  <ion-content has-header="true">
+    <div class="list" style="background-color:#ffffff;">
+   
+      
+      <div class="item" style="background-color:#eeeeee;">
+			
+        <h2  ng-if="isAdmin">Booking List</h2>
+				<h2  ng-if="!isAdmin">My Bookings</h2>
+        <p>Home / Bookings </p>
+        
+      </div>
+			
+
+				<md-input-container>
+			<label>Filter by:</label>
+					
+		
+				<md-select ng-model="selected" aria-label="filter selected">
+					<md-option ng-repeat="opt in options track by opt.id " value="{{opt.status}}">
+						<h6>{{opt.label}}
+              </h6>
+					</md-option>
+				</md-select>
+					
+						</md-input-container>
+				
+				<div ng-if="isEmptyList" class="item item-text-wrap secondary-button-padding" height="60px">
+					<h1>Found no bookings.</h1>
+				</div>
+				<div ng-if="!isEmptyList" class="item item-text-wrap">
+
+					<a ng-repeat="booking in bookings  | filter:selected as results track by $index" href="#main/bookings/{{booking.id}}" class="item item-thumbnail-left-app" style="height: 57px; ">
+					
+						<input hidden="true" value="{{booking.qr.code}}" ng-model="qrcodeString" />
+						<input hidden="true" value="{{(booking.status === 'approved') ? true: false; }}" ng-model="isApproved" />
+						<div ng-if="booking.status === 'approved'"  style="position:absolute; left:0px; height:50px;top:0px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);">
+						<qr class="item-small" text="qrcodeString" type-number="typeNumber" correction-level="correctionLevel" size="50" input-mode="inputMode" image="image">
+						</qr>
+						</div>
+						<div ng-if="booking.status !== 'approved'">
+						<img src="img/defqr.png" style="position:absolute; left:0px; height:50px;top:0px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);" />
+							
+						</div>
+							<span class="item-span-small">
+							<h6>{{booking.name}}</h6>
+							<h6> {{booking.from}} -- {{booking.to}}</h6>
+							<h6> {{booking.park.name}} {{booking.status}}</h6>
+						</span>
+					</a>
+				</div>
+			
+
+			</div>
+
+	</ion-content>
+</ion-view>

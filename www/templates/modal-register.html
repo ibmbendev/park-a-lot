@@ -1,0 +1,56 @@
+<ion-modal-view ng-controller="RegisterCtrl" class="modal slide-in-up"  style="left: 10px; right: 10px; top: 50px ; width:358px; height:300px;">
+ 
+	<div  data-tap-disabled="true" >	
+  <ion-header-bar class="bar-assertive-900">
+    <h1 class="title">Register</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideModal(modalReg)">x</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="no-scroll">
+	<div>
+		<div class="padding">
+			Please enter your email and password to register.
+		</div>
+		<div class="list">
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Email</span>
+			<input type="email" placeholder="me@email.com" ng-model="user.email">
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Password</span>
+			<input type="password" placeholder="Enter your password" ng-model="user.password">
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Confirm Password</span>
+			<input type="password" placeholder="Re-enter password" ng-model="user.passwordConfirmed">
+		</label>
+		</div>
+		<div class="padding">
+			<button class="button  button-small  button-positive button-block" ng-click="signup( user )">Register</button>
+			<div ng-if="registerSuccess" ng-bind="registerMessage">
+			</div>    
+			<div class="error" ng-if="errorMessage" ng-bind="errorMessage">
+			</div>     
+			<div class="error password-strength-error" ng-if="!passwordValid">
+				Password must:
+				<ul>
+					<li>have at least 1 uppercase letter</li>
+					<li>have at least 1 lowercase letter</li>
+					<li>have at least 1 digit</li>
+					<li>be at least 8 characters long</li>
+				</ul>
+			</div>  
+			<br>
+			<button class="button button-small button-stable button-block" ng-click="hideModal(modalReg)">
+        I have an account
+      </button>
+      <button class="button button-small button-stable button-block" ng-if="registerSuccess" ng-click="modalReg.hide()">
+        Continue to Login
+      </button>
+    </div>		
+   </div>
+  </ion-content>
+	 
+	 </div>
+</ion-modal-view>

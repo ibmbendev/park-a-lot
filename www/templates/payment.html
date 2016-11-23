@@ -1,0 +1,115 @@
+<ion-view view-title="Payment">
+  <ion-content>
+    <div class="list" style="background-color:#ffffff;">
+      <div class="item" style="background-color:#eeeeee; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);">
+        <h2>Add Payment </h2>
+        <p>Card Payment</p>
+
+      </div>
+    
+      <div class="item item-text-wrap" style="background-color:#ffffff;">
+      
+        
+          <!--form name="cardForm" ng-submit="AddCCInfo(payment, $event) && cardForm.$valid "-->
+						 <form name="cardForm" ng-submit="AddCCInfo(payment, $event)">
+            <h3>Credit Card Details</h3>
+        <img src="../img/img-payment-cc.png" width="120" height="30" alt="Payment Logo">
+        <br/>
+    
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <input placeholder="First Name" 
+									ng-model="payment.card.name" 
+								  ng-required="true" value="{{payment.card.name}}">
+              </md-input-container>
+              <md-input-container flex>
+                <input placeholder="Last Name" ng-model="payment.card.last" 
+								  ng-required="true" value="{{payment.card.last}}">
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <md-select  ng-required="true" ng-model="payment.card.ctype">
+                  <md-option value="{{payment.card.ctype}}" selected="true">
+                    <h6>Select Type</h6></md-option>
+                  <md-option value="VISA">
+                    <h6>Visa</h6></md-option>
+                  <md-option value="MASTERCARD">
+                    <h6>Mastercard</h6></md-option>
+                  <md-option value="DISCOVER">
+                    <h6>Discover</h6></md-option>
+                  <md-option value="AMERICANEXPRESS">
+                    <h6>American Express</h6></md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <input  ng-required="true" ng-model="payment.card.ccno" size="15" 
+									placeholder="Card Number" 
+								  value="{{payment.card.ccno}}" type="">
+              </md-input-container>
+              <md-input-container flex>
+                <input  ng-required="true" ng-model="payment.card.exp" size="4" 
+								  placeholder="Expiration Date" 
+									value="{{payment.card.exp}}">
+              </md-input-container>
+              <md-input-container flex>
+                <input  ng-required="true" ng-model="payment.card.ccv" size="4" 
+									placeholder="CCV" value="{{payment.card.ccv}}">
+              </md-input-container>
+            </div>
+            <div>
+              <label for="cc-default">Make default</label>
+              <input value="{{payment.card.primary}}"  ng-required="true" ng-model="payment.card.primary" type="checkbox" id="cc-default" checked>
+            </div>
+
+        <h3>Billing Address</h3>
+      
+          <md-input-container flex>
+            <label>Address</label>
+            <input  ng-required="true" ng-model="payment.billing.address" placeholder="Address" value="{{payment.billing.address}}">
+          </md-input-container>
+          <md-input-container flex>
+            <label>City</label>
+            <input  ng-required="true" ng-model="payment.billing.city" placeholder="City" value="{{payment.billing.city}}">
+          </md-input-container>
+
+          <md-input-container flex>
+            <label>State</label>
+							<md-select  ng-required="true" ng-model="payment.billing.state">
+            
+							 <md-option  value="PH">
+                    <h6>PH</h6></md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container flex>
+            <label>Zip Code</label>
+            <input  ng-required="true" ng-model="payment.billing.zip" placeholder="ZipCode" value="{{payment.billing.zip}}">
+          </md-input-container>
+          <md-input-container flex>
+            <label>Country</label>
+						<md-select  ng-required="true" ng-model="payment.billing.country">
+						 <md-option value="Phillipines">
+                    <h6>Philippines</h6></md-option>
+          </md-input-container>
+        
+        <div class="error" ng-if="errorMessage" ng-bind="errorMessage">
+        </div>
+        
+        <div class="list">
+          <label>
+            <button type="submit" class="button button-small button-dark">Submit</button>
+          </label>
+           <label>
+            <button type="cancel" class="button button-small button-dark">Cancel</button>
+          </label>
+        </div>
+      </div>
+      </form>
+  
+    </div>
+
+  </ion-content>
+</ion-view>

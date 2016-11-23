@@ -1,0 +1,29 @@
+<ion-view view-title="About">
+  <ion-content>
+    <div class="list" style="background-color:#eeeeee;">
+    <div class="hero no-header flat" style="background-color:#eeeeee;">
+      <div class="content">
+       
+      </div>
+    </div>
+  
+    <div class="item" style="background-color:#ffffff;">
+        <h2>About </h2>
+        <p>Home/About</p>
+     
+    </div>
+			
+    <div class="card" ng-if="isQAMode">
+			<div>
+          <button ng-click="clearStorage()" class="button button-full button-positive ink">clear storage</button>
+			</div>
+			<div>
+          <button ng-click="readLogs()" class="button button-full button-positive ink">read logs</button>
+			</div>
+    </div>
+			
+				<img ng-src="{{src}}" style="max-width:100%">
+				
+ 
+  </ion-content>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-modal-view class="modal slide-in-up" style="left: 10px; right: 10px; top: 50px ; width:358px; height:300px;">
+  <ion-header-bar class="bar-assertive-900">
+    <h1 class="title">Operator Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideModal(modalOpLogin)">x</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div ng-controller="OpLoginCtrl">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="Enter your email" ng-model="user.email">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Enter your password" ng-model="user.password">
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button  button-small button-positive button-block" ng-click="oplogin()">Login</button>
+        <div class="error" ng-if="errorMessage" ng-bind="errorMessage"></div>
+        <br><br><br>
+		<button class="button  button-small  button-positive button-block" ng-click="showModal(modalResPass)">
+			Reset Password
+		</button>
+		<button class="button  button-small  button-stable button-block" ng-click="hideModal(modalOpLogin)">
+			Cancel
+		</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,21 @@
+<div ng-show="notLoaded" class=" center bar bar-subheader">
+   <h3 class="title">Loading PDF...</h3>
+</div>
+
+<div class="tabs tabs-icon-left">
+	<a class="tab-item" ng-click="goPrevious()">
+	<i class="icon ion-arrow-left-c"></i>
+		Prev
+  </a>
+  <a class="tab-item" ng-click="goNext()">
+	<i class="icon ion-arrow-right-c"></i>
+     Next
+  </a>
+	<a class="tab-item" target="_self" href="data/SlotOccupancyReport.pdf" download="SlotOccupancyReport.pdf">
+	<i class="icon ion-document-text"></i>
+		Download
+	</a>
+</div>
+<ion-scroll zooming="true" direction="xy" class="has-header">
+  <canvas class="padding" id="pdf" class="rotate0"></canvas>
+</ion-scroll>

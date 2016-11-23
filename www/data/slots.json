@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "location": "Ayala Triangle",
+        "state": "PH",
+        "city": "Makati",
+				"occupied": 4,
+				"unoccupied": 2
+    },
+    {
+        "id": 2,
+        "location": "Glorieta 3 Park",
+        "state": "PH",
+        "city": "Makati",
+				"occupied": 4,
+				"unoccupied": 2
+    },
+    {
+        "id": 3,
+        "location": "Paseo",
+        "state": "PH",
+        "city": "Makati",
+				"occupied": 4,
+				"unoccupied": 2
+				
+    },
+    {
+        "id": 4,
+        "location": "Ayala Ave., Ayala Center",
+        "state": "PH",
+        "city": "Makati",
+				"occupied": 4,
+				"unoccupied": 2
+    },
+    {
+        "id": 5,
+        "location": "Ayala Ave., Ayala Center",
+        "state": "PH",
+        "city": "Makati",
+				"occupied": 4,
+				"unoccupied": 2
+				
+    }
+    
+]

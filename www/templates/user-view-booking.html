@@ -1,0 +1,97 @@
+<ion-view view-title="Booking">
+  <ion-content>
+    <div class="item card-item ">
+
+      <div class="item item-text-wrap" style="position:relative;height:80px;">
+        <div>
+          <span style="position:absolute; left:10px; top:10px;"> 
+          <h6><b>TRN  :</b>  {{booking.id | numberFixedLen:5 }} 				</h6></span>
+          <span style="position:absolute; left:200px; top:10px;">
+          <h6><b>B   </b>    {{booking.trn.date }}  </h6></span>
+        </div>
+        <div>
+          <span style="position:absolute; top:22px; left:10px;">
+       <h6><b>OR : 0000012</b> </h6></span>
+          <span style="position:absolute; top:22px; left:200px;">
+       <h6><b>R</b> {{booking.trn.update }} </h6></span>
+          <span style="position:absolute; top:34px; left:10px;">
+       <h6><b>From :</b>  {{booking.from | date }} </h6></span>
+          <span style="position:absolute; top:34px; left:200px;">
+       <h6><b>To:</b>  {{booking.to| date }}  </h6></span>
+          <span style="position:absolute; top:47px; left:10px;">
+       <h6><b> Park Name:</b> {{booking.park.name}}</h6></span>
+          <h6><span style="position:absolute; top:47px; left:200px;">
+       <h6><b>Slot No:</b> {{booking.park.no}}</h6></span>
+        </div>
+      </div>
+      <div ng-bind="booking.status" class="item item-divider" style="background-color:#eeeeee;">
+        <h3>{{booking.status}}</h3>
+        <h4>CODE:{{qrcodeString}}</h4>
+      </div>
+      <div class="item item-text-wrap" style="position:relative;">
+        <div  ng-if="isApproved" style="position:relative;left:0px	; top:0px;">
+          <qr text="qrcodeString" type-number="typeNumber" correction-level="correctionLevel" size="size" input-mode="inputMode" image="image"></qr>
+          <span><h6>{{qrcodeString}}</h6></span>
+        </div>
+
+        <div  ng-if="!isApproved" style="">
+          <img src="img/defqr.png" style="width:320px;height:220px" />
+        </div>
+      </div>
+
+      <div style="position:relative;" class="item item-text-wrap">
+        <h5><b>Details </b></h5>
+
+        <h6>Plate No: {{booking.plateno}} </h6>
+        <h6>Cargo: {{booking.type}} </h6>
+        <h6>Todal Days: {{booking.totDays}} </h6>
+        <h6>Fee:  {{booking.park.fee}}  </h6>
+        <h6>Notes:{{booking.notes}} </h6>
+
+        <span style="position:absolute; top:30px; left:180px;">
+              <h5><b>TOTAL:</b>   {{booking.trn.amount | currency}}</h5>
+            </span>
+        <span style="position:absolute; top:60px; left:180px;">
+              <h5><b>STATUS:</b>    {{booking.status}}</h5>
+            </span>
+
+      </div>
+
+      <div class="item item-divider" style="background-color:#eeeeee;">
+        <h3><b>Comments:</b><isAdmin/h3>
+        <h5> {{comments}}</h5>
+        <div class="list">
+          <h4>by:</h4>   
+        </div>
+      </div>
+       		<input hidden="true" ng-model="booking.id" value="booking.id">
+      <div ng-if="isAdmin" class="item tabs tabs-secondary tabs-icon-left" style="background-color:#eeeeee;">
+				
+        <a class="tab-item active" ng-click="ApproveBooking(booking, $event)">      
+					<i class="icon ion-android-done" ></i> Approve
+          </a>
+        <a  class="tab-item active"  ng-click="RejectBooking(booking, $event)">
+			
+            <i class="icon ion-android-cancel" ></i> Reject
+          </a>
+          <a class="tab-item"  ng-click="ShowCommentBox(booking, $event)">
+						<input hidden="true" ng-model="comment" value="">
+            <i class="icon ion-chatbox"></i> Comment
+          </a>
+        
+      </div>
+      <div ng-if="!isAdmin" class="item tabs tabs-secondary tabs-icon-left" style="background-color:#eeeeee;">
+        <a class="tab-item" ng-click="CancelBooking(booking, $event)">
+					
+            <i class="icon ion-android-done" ></i> Cancel
+          </a>
+          <a class="tab-item"  ng-click="ShowCommentBox(booking, $event)">
+						<input hidden="true" ng-model="comment" value="">
+            <i class="icon ion-chatbox"></i> Comment
+          </a>
+        
+      </div>
+    </div>
+    
+  </ion-content>
+</ion-view>

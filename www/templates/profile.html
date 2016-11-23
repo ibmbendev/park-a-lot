@@ -1,0 +1,57 @@
+<ion-view view-title="Profile">
+	<ion-content>
+
+		<div class="list" style="background-color:#eeeeee;">
+			<div class="item" style="background-color:#eeeeee;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);">
+				<h2>{{user.name}} </h2>
+				<h3>{{user.role}} </h3>
+				
+
+				<img style="position: absolute; top:15px; right:15px; width:60px;height: 50px;" src="img/avatar.jpg">
+			</div>
+
+			<div class="list" style="background-color:#ffffff;">
+				<div class="item" style="box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);">
+
+					<h3>Personal Information</h3>
+
+					<p><b>First Name :</b>{{(payment.card.name)?payment.card.name :profile.firstname}}</p>
+					<p><b>Last Name:</b>{{(payment.card.last) ? payment.card.last :profile.firstname}}</p>
+					<p><b>Home Address:</b>{{profile.address}}</p>
+					<p><b>Email:</b>{{user.email}}</p>
+				</div>
+				<div class="item" style="box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);">
+					<h3>Card Information</h3>
+
+					<div ng-if="!paymentOK">
+						<a ng-click="ShowCcForm()" class="item item-icon-left">
+							<i class="icon ion-card"></i> Enter Credit Card information
+						</a>
+
+						<!--a ng-click="ShowPaypalModal(2)" class="item item-icon-left">
+							<img src="../img/img-paypal.png" class="icon" width="23" height="10" alt="Paypal Image"> OR Enter Paypal information
+						</a-->
+
+					</div>
+					<div ng-if="paymentOK">
+					
+						<p><b>Card Type:</b> {{payment.card.ctype}}</p>
+						<p><b>Address:</b> {{payment.card.address}}</p>
+						<p><b>CardNo:</b>XXX-{{payment.card.ccno}}-XXXX</p>
+						<p><b>CCV:</b> {{payment.card.ccv}}</p>
+						<p><b>Expiry:</b>{{payment.card.exp}}</p>
+						<h4>Billing Address</h4>
+						<p><b>Address:</b> {{payment.billing.address}}</p>
+						<p><b>City:</b>{{payment.billing.city}}</p>
+						<p><b>State:</b>{{payment.billing.state}}</p>
+						<p><b>Zip:</b> {{payment.billing.zip}}</p>
+						<p><b>Country:</b>{{payment.billing.country}}</p>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

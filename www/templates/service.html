@@ -1,0 +1,43 @@
+<ion-view view-title="Services">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="card" style="height: 100%">
+        <label class="list-item"><h2>Other Services:</h2></label>
+        <ul>
+            <li>
+                <button class="button icon-left ion-paintbucket button-full button-light" ng-click="service(1)">
+                    <h4>Fluids check and top-up</h4>
+                </button>
+            </li>
+            <li>
+                <button class="button icon-left ion-wrench button-full button-light" ng-click="service(2)">
+                    <h4>Tire check and repair</h4>
+                </button>
+            </li>
+            <li>
+                <button class="button icon-left ion-loop button-full button-light" ng-click="service(3)">
+                    <h4>Tire rotation</h4>
+                </button>
+            </li>
+            <li>
+                <button class="button icon-left ion-waterdrop button-full button-stable" ng-click="service(4)">
+                    <h4>Truck wash</h4>
+                </button>
+            </li>
+        </ul>
+        <div class="card" ng-show="myService.length > 0">
+            <label><h4>You availed the following service/s:</h4></label>
+            <ul class="list">
+                <div class="list-item">
+                <li class="item" ng-repeat="myserve in myService">
+                    <h2 class="pull-left">{{myserve.serviceName}}</h2>
+                    <button class="button button-assertive button-clear icon ion-minus-circled pull-right" ng-click="delServe(myserve.id)"></button>
+                </li>
+                </div>
+            </ul>
+        </div>
+        <div class="card" ng-show="myService.length <= 0">
+            <h4>You haven't availed any service.</h4>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

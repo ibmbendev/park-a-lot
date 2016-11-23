@@ -1,0 +1,204 @@
+{
+  "parkings" : {
+    "location1" : {
+      "city" : "Makati",
+      "distance" : 0,
+      "fees" : {
+        "discounted" : 90,
+        "fixrate" : 1200,
+        "perday" : 110,
+        "permonth" : 3200
+      },
+      "id" : 0,
+      "lat" : 14.5567663,
+      "location" : "Ayala Triangle",
+      "logo" : "img/ayalalogo.jpg",
+      "long" : 121.0223622,
+      "name" : "Ayala Parking Basement 1",
+      "slotcount" : 20,
+      "slots" : {
+        "no1" : {
+          "status" : 0
+        },
+        "no2" : {
+          "status" : 1
+        },
+        "no3" : {
+          "status" : 0
+        },
+        "no4" : {
+          "status" : 0
+        },
+        "no5" : {
+          "status" : 1
+        },
+        "no6" : {
+          "status" : 0
+        }
+      },
+      "state" : "PH",
+      "view" : "img/park.jpg",
+      "zipcode" : 1700
+    },
+    "location2" : {
+      "city" : "Makati",
+      "distance" : 0,
+      "fees" : {
+        "discounted" : 90,
+        "fixrate" : 100,
+        "perday" : 110,
+        "permonth" : 3200
+      },
+      "id" : 2,
+      "lat" : 14.5532962,
+      "location" : "Glorieta 3 Park",
+      "logo" : "img/ayalalogo.jpg",
+      "long" : 121.0247088,
+      "name" : "Glorieta 3 Parking 1",
+      "slotcount" : 20,
+      "slots" : {
+        "no1" : {
+          "status" : 0
+        },
+        "no2" : {
+          "status" : 1
+        },
+        "no3" : {
+          "status" : 0
+        },
+        "no4" : {
+          "status" : 0
+        },
+        "no5" : {
+          "status" : 1
+        },
+        "no6" : {
+          "status" : 0
+        }
+      },
+      "state" : "PH",
+      "view" : "img/ayalapark1.png",
+      "zipcode" : 2500
+    },
+    "location3" : {
+      "city" : "Makati",
+      "distance" : 0,
+      "fees" : {
+        "discounted" : 90,
+        "fixrate" : 100,
+        "perday" : 210,
+        "permonth" : 3200
+      },
+      "id" : 3,
+      "lat" : 1,
+      "location" : "Paseo",
+      "logo" : "img/ayalalogo.jpg",
+      "long" : 0,
+      "name" : "Paseo De Roxas 3",
+      "slotcount" : 20,
+      "slots" : {
+        "no1" : {
+          "status" : 0
+        },
+        "no2" : {
+          "status" : 1
+        },
+        "no3" : {
+          "status" : 0
+        },
+        "no4" : {
+          "status" : 0
+        },
+        "no5" : {
+          "status" : 1
+        },
+        "no6" : {
+          "status" : 0
+        }
+      },
+      "state" : "PH",
+      "view" : "img/ayalapark1.png",
+      "zipcode" : 1920
+    },
+    "location4" : {
+      "city" : "Makati",
+      "distance" : 0,
+      "fees" : {
+        "discounted" : 90,
+        "fixrate" : 100,
+        "perday" : 110,
+        "permonth" : 3200
+      },
+      "id" : 4,
+      "lat" : 14.5543591,
+      "location" : "Ayala Avenue, Ayala Center",
+      "logo" : "img/ayalalogo.jpg",
+      "long" : 121.0251455,
+      "name" : "6750 Office Tower",
+      "slotcount" : 20,
+      "slots" : {
+        "no1" : {
+          "status" : 1
+        },
+        "no2" : {
+          "status" : 1
+        },
+        "no3" : {
+          "status" : 0
+        },
+        "no4" : {
+          "status" : 0
+        },
+        "no5" : {
+          "status" : 1
+        },
+        "no6" : {
+          "status" : 0
+        }
+      },
+      "state" : "PH",
+      "view" : "img/6750-MAP.jpg",
+      "zipcode" : 2500
+    },
+    "location5" : {
+      "city" : "QC",
+      "distance" : 0,
+      "fees" : {
+        "discounted" : 90,
+        "fixrate" : 100,
+        "perday" : 110,
+        "permonth" : 3200
+      },
+      "id" : 5,
+      "lat" : 14.657877,
+      "location" : "Quezon City",
+      "logo" : "img/ayalalogo.jpg",
+      "long" : 14.657877,
+      "name" : "UP-AyalaLand TechnoHub",
+      "slotcount" : 20,
+      "slots" : {
+        "no1" : {
+          "status" : 0
+        },
+        "no2" : {
+          "status" : 1
+        },
+        "no3" : {
+          "status" : 0
+        },
+        "no4" : {
+          "status" : 0
+        },
+        "no5" : {
+          "status" : 1
+        },
+        "no6" : {
+          "status" : 0
+        }
+      },
+      "state" : "PH",
+      "view" : "img/park.jpg",
+      "zipcode" : 1700
+    }
+  }
+}

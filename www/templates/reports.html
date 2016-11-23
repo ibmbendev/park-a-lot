@@ -1,0 +1,48 @@
+<ion-view view-title="Reports">
+  <ion-content>
+    <div class="list" style="background-color:#eeeeee;">
+    <div class="item" style="background-color:#eeeeee;">
+        <h2>Reports</h2>
+        <p>Home / Reports </p>
+        
+      </div>
+<!--
+      <div class="list list-inset" style="background-color:#ffffff;">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search">
+      </div>-->
+
+      <div class="list" style="background-color:#ffffff;">
+        <div class="item" style="background-color:#ffffff;">
+          <a class="item item-icon-left" href="#/main/servicefull">
+            <i class="icon ion-email"></i> Services
+             <span class="badge badge-assertive">{{servicesCount}}</span>
+          </a>
+        </div>
+      
+        <div class="item" style="background-color:#ffffff;">
+          <a class="item item-icon-left" href="#/main/underconstruction">
+            <i class="icon ion-email"></i> Downloads
+             <span class="badge badge-assertive">0</span>
+          </a>
+          
+        </div>
+        <div class="item" style="background-color:#ffffff;">
+          <a class="item item-icon-left" ui-sref="main.slot-report">
+            <i class="icon ion-email"></i> Bookings
+             <span class="badge badge-assertive">0</span>
+          </a>
+        </div>
+        <div class="item" style="background-color:#ffffff;">
+          <a class="item item-icon-left" ui-sref="main.users-report">
+            <i class="icon ion-email"></i> Users
+             <span class="badge badge-assertive">0</span>
+          </a>
+        </div>
+        </div>
+       
+    
+    </div>
+  </ion-content>
+</ion-view>

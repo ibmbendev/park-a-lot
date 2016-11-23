@@ -1,0 +1,58 @@
+<ion-modal-view class="modal slide-in-up" style="left: 10px; right: 10px; top: 50px ; width:358px; height:300px;">
+		<div  data-tap-disabled="true" >
+	<ion-header-bar class="bar-assertive-900">
+		<h1 class="title">Confirm Booking</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="modalConfirm.hide()">x</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+
+		<div style="background-color:#eeeeee;" class="list">
+			<div style="background-color:#eeeeee;position:absolute;top:0px;left:0px;width:400px; height:350px" class="list">
+				<div style="position:absolute;top:10px;left:30px;width:400px; height:350px" class="list">
+					<div>
+						<span style="position:relative; "> 
+          <h6 class=""><b>TRN  :</b>   	{{booking.trn.id   | numberFixedLen:5 }}			</h6></span>
+						<span style="position:absolute; left:200px; top:0px;">
+          <h6 class=""><b class="">B   </b>  {{booking.trn.date | date }} </h6></span>
+					</div>
+					<div>
+
+						<span style="position:relative;">
+       <h6 class=""><b>OR :</b> {{ booking.trn.orno  | numberFixedLen:5 }}</h6></span>
+						<span style="position:absolute; left:200px; top:20px;">
+       <h6 class=""><b>B/R</b> {{booking.trn.update}}  </h6></span>
+						<span style="position:relative;">
+       <h6 class=""><b>From :</b>    {{booking.from}}    </h6></span>
+						<span style="position:absolute; left:200px; top:40px;">
+        
+       <h6 class=""><b>To:</b>   {{booking.to}}     </h6></span>
+
+					</div>
+					<div style="position:relative;">
+						<h5><b>Details </b></h5>
+						<h6 class="">Park Name:  {{booking.park.name}}</h6>
+						<h6 class="">Slot No: {{booking.park.no}}</h6>
+						<h6 class="">Plate No:  {{booking.plateno}} </h6>
+						<h6 class="">Cargo:  {{booking.cargo}}   </h6>
+						<h6 class="">Notes:  {{booking.notes}} </h6>
+                        <h6 class="">Other Services:  {{ booking.services }} </h6>
+						<h6 class=""><b>STATUS:</b>  {{booking.status}}</h6>
+						<span style="position:absolute; left:200px; top:85px;">
+          <h6 class="">Fee:   {{booking.park.fee}}   </h6>
+          <h6 class="">Todal Days: {{booking.totDays}}   </h6>
+        <h6 class=""><b>TOTAL:</b> {{booking.trn.amount | currency}}   </h6></span>
+					</div>
+					<div style="position:absolute; left:0px; top:270px;">
+
+						<button ng-click="confirmBooking(booking, $event)" class="button button-small  button-dark">confirm</button>
+
+						<button ng-click="reset(booking, $event)" class="button button-small button-dark">cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

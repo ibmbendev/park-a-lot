@@ -1,0 +1,32 @@
+
+<ion-view view-title="{{park.name}}">
+  <ion-content>
+    <div class="list">
+     <div class="item item-image" style="position:absolute; height:314px;" >
+			  <img src="{{park.view}}" />
+			 
+		
+			</div>
+    <div class="item item-text-wrap" style="position:relative; height:314px;" >       
+      <div ng-repeat="slot in slots">
+        <button class="button {{slot.status?'button-assertive':'button-balanced'}}"  
+                 ng-click="bookaspot(park, slot.no, slot.status, $event)" ng-bind="slot.status">     
+			  </button>  
+			</div>
+    </div>
+      
+    <div class="item" style="background-color:#eeeeee;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);">
+			
+        <h2>{{park.name}}</h2>
+      <p>Home / Search / Parks / {{park.location}}</p>
+    </div>
+   
+      <div class="item item-text-wrap" style="position:relative;">
+      <span>
+      	<h4> Some info about the parking... </h4>
+      </span>
+    </div>
+    </div>  
+  </ion-content>
+
+</ion-view>

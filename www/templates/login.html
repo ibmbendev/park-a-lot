@@ -1,0 +1,37 @@
+<ion-view>
+	<ion-content style="background: url(img/login.png) center; background-size: cover;">
+		<div class="list">
+			<form name="loginForm" ng-submit="loginApp(data, $event) && loginForm.$valid ">
+				<div class="item padding" style="top:290px;">
+					<ion-md-input ng-model="data.username" aria-describedby="user" placeholder="Username" highlight-color="balanced" type="text" required ng-value="data.username" style="width:100%;"></ion-md-input>
+
+					<ion-md-input ng-model="data.password" aria-describedby="password" placeholder="Password" highlight-color="energized" type="password" required ng-value="data.password" style="width:100%;">
+
+					</ion-md-input>
+
+
+	<div class="item padding">
+
+					<button type="submit" class="button button-full button-dark ink">Login</button>
+				</div>
+
+
+				</div>
+				<div class="error" ng-if="errorMessage" ng-bind="errorMessage">
+					<span ng-if="loginForm.data.$error.required">Required!</span>
+				</div>
+			
+
+			</form>
+			<!-- div class="padding" >
+			<button ng-click="modalReg.show()" class="button-small button button-clear"
+style="background-color:#fff;color: #333;top: 190px; margin-left:100px;" >Register</button>
+		</div>
+		<div class="padding">
+			
+			<button ng-click="modalResPass.show()" class="button-small button button-clear" 
+style=" margin-left:70px; color: #333; background-color:#fff;top:200px;">Reset Password</button>
+		</div -->
+		</div>
+	</ion-content>
+</ion-view>

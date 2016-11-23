@@ -1,0 +1,32 @@
+<ion-view view-title="Search Users">
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Search Registered Users</h1>
+  </ion-header-bar>
+  <ion-content>
+	<div class="list list-inset">
+		<label class="item item-input">
+			 <i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Enter ID, email or name" ng-model="search"></textarea>
+		</label>
+    <button ng-click="search = ''" class="button input-button button-small" ng-show="search.length">Clear
+    </button>
+		
+	</div>
+	<div class="row header">
+		<div class="col-10" ng-click="sort('id')">ID
+			<i class="icon placeholder-icon" ng-show="sortKey=='id'" ng-class="{'ion-chevron-up':reverse,'icon ion-chevron-down':!reverse}"></i>		   
+    </div>
+		<div class="col" ng-click="sort('email')">Email</div>
+    <div class="col" ng-click="sort('name')">Name</div>
+		<div class="col">Location</div>
+	</div>
+	<div class="row" ng-repeat="user in users|orderBy:sortKey:reverse|filter:search">
+		<div class="col-10">{{user.id}}</div>
+		<div class="col">{{user.email}}</div>
+		<div class="col">{{user.name}}</div>
+		<div class="col">{{user.location}}</div>
+	</div>
+	<br />
+	  
+</ion-content>
+</ion-view>

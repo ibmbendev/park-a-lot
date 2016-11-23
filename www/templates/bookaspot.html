@@ -1,0 +1,91 @@
+<ion-view view-title="">
+	<ion-content>
+		<div class="list" style="background-color:#eeeeee;">
+
+			<div class="item" style="background-color:#eeeeee;">
+				<h2>You are about to book in park {{booking.park.name}}  </h2>
+				<p>Slot No: {{booking.park.no}}</p>
+			</div>
+			<div class="list">
+			<form name="bookForm" ng-submit="ShowConfirmModal(booking, $event) && bookForm.$valid ">
+				
+					<md-content layout-padding>
+
+						<!--div layout layout-sm="column">
+								<md-input-container flex>
+								<label>Name</label>
+								<input ng-model="booking.name" md-placeholder="Name" value="{{booking.park.name}}">
+							</md-input-container>
+						</div -->
+						<input hidden ng-model="booking.name" md-placeholder="Name" value="{{booking.park.name}}">
+						<md-input-container>
+							<label>Plate No:</label>
+							<input placeholder="" ng-model="booking.plateno" ng-required="true">
+						</md-input-container>
+						<div layout layout-sm="column">
+							<md-datepicker ng-model="booking.from"  ng-required="true" md-min-date="minDate">
+								
+							<label>Date From:</label>
+							</md-datepicker>
+							<md-datepicker flex ng-model="booking.to"  ng-required="true" md-min-date="booking.from">
+							</md-datepicker>
+						</div>
+						<div layout layout-sm="column">
+							<md-input-container>
+								
+							<label>Cargo</label>
+								<md-select ng-model="booking.cargo">
+									<md-option ng-repeat="type in types" value="{{type.value}}">
+										{{type.name}}
+									</md-option>
+								</md-select>
+							</md-input-container>
+							<md-input-container class="md-block">
+								<!-- start of optional service section-->
+
+
+								<ul class="list">
+									<label>Services</label>
+									<li ng-repeat="my in myServices">
+										{{my.serviceName}}
+										<a class="button button-clear button-assertive" ng-click="showDelServicePopup(my.id)">
+											<i class="icon ion-minus-circled"></i>
+										</a>
+									</li>
+
+								</ul>
+
+								<a class="button button-outline button-positive" ng-click="showActionsheet()">Avail optional services</a>
+
+
+							</md-input-container>
+
+
+
+							<md-input-container class="md-block">
+								<label>Notes</label>
+								<textarea ng-model="booking.notes" columns="1" md-maxlength="150" rows="3"></textarea>
+							</md-input-container>
+
+							<!-- end of optional service section-->
+
+						</div>
+
+
+
+						<div class="list">
+
+							<button type="submit" class="button  button-block button-dark">Calculate</button>
+
+						</div>
+						<div class="error" ng-if="errorMessage" ng-bind="errorMessage">
+						</div>
+					</md-content>
+				
+
+			</form>
+				</div>
+		</div>
+	</ion-content>
+
+</ion-view>
